@@ -45,10 +45,19 @@ public class LineCompProb {
         String line1 = String.valueOf(lineLength1);// to convert an integer to string same like to_string
         String line2 = String.valueOf(lineLength2);
 
-        if (line1.equals(line2)) {// given in pdf thats why
-            System.out.println("Both lines are equal");
-        } else {
-            System.out.println("Both lines are not equal");
+        // if (line1.equals(line2)) {// given in pdf thats why
+        //     System.out.println("Both lines are equal");
+        // } else {
+        //     System.out.println("Both lines are not equal");
+        // }
+        int compare=line1.compareTo(line2);
+       
+        if(compare==0){
+            System.out.println("lines are equal");
+        }else if(compare>0){
+            System.out.println("line1 is greater then line2");
+        }else{
+            System.out.println("line1 is less than line2");
         }
     }
 }
