@@ -1,14 +1,24 @@
+import java.util.Scanner;
+
 public class LineCompProb {
+
+    public static boolean lineEqualsorNot(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
+        int minX1 = Math.min(x1, x2);
+        int maxX1 = Math.max(x1, x2);
+        int minY1 = Math.min(y1, y2);
+        int maxY1 = Math.max(y1, y2);
+        int minX2 = Math.min(x3, x4);
+        int maxX2 = Math.max(x3, x4);
+        int minY2 = Math.min(y3, y4);
+        int maxY2 = Math.max(y3, y4);
+        return minX1 == minX2 && maxX1 == maxX2 && minY1 == minY2 && maxY1 == maxY2;
+    }
+
     public static void main(String[] args) {
         System.out.println("Welcome to Line Comparison Computation Program");
 
         // First set of points
-        int x1;
-        int x2;
-        int y1;
-        int y2;
-        // one line has 2 points. 2 points = 4 coordinates
-
+        int x1, x2, y1, y2;
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter x1:");
         x1 = sc.nextInt();
@@ -24,11 +34,7 @@ public class LineCompProb {
         System.out.println("The length of the first line is: " + lineLength1);
 
         // Second set of points
-        int x3;
-        int x4;
-        int y3;
-        int y4;
-
+        int x3, x4, y3, y4;
         System.out.println("Enter x3:");
         x3 = sc.nextInt();
         System.out.println("Enter y3:");
@@ -42,14 +48,16 @@ public class LineCompProb {
         double lineLength2 = Math.sqrt(squaredLength2);
         System.out.println("The length of the second line is: " + lineLength2);
 
-        String line1 = String.valueOf(lineLength1);// to convert an integer to string same like to_string
-        String line2 = String.valueOf(lineLength2);
-
-        if (line1.equals(line2)) {// given in pdf thats why
-            System.out.println("Both lines are equal");
+        if (lineLength1 == lineLength2) {
+            System.out.println("Both line lengths are equal");
         } else {
-            System.out.println("Both lines are not equal");
+            System.out.println("Both line lengths are not equal");
+        }
+
+        if (lineEqualsorNot(x1, y1, x2, y2, x3, y3, x4, y4)) {
+            System.out.println("Both lines are equal (using lineEqualsorNot method)");
+        } else {
+            System.out.println("Both lines are not equal (using lineEqualsorNot method)");
         }
     }
 }
-
