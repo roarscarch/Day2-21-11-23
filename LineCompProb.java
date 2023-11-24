@@ -1,4 +1,16 @@
 public class LineCompProb {
+
+     public static boolean lineEqualsorNot(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
+        int minX1 = Math.min(x1, x2);
+        int maxX1 = Math.max(x1, x2);
+        int minY1 = Math.min(y1, y2);
+        int maxY1 = Math.max(y1, y2);
+        int minX2 = Math.min(x3, x4);
+        int maxX2 = Math.max(x3, x4);
+        int minY2 = Math.min(y3, y4);
+        int maxY2 = Math.max(y3, y4);
+        return minX1 == minX2 && maxX1 == maxX2 && minY1 == minY2 && maxY1 == maxY2;
+    }
     public static void main(String[] args) {
         System.out.println("Welcome to Line Comparison Computation Program");
 
