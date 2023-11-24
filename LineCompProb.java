@@ -1,5 +1,17 @@
 import java.util.Scanner;
 public class LineCompProb {
+
+     public static boolean lineEqualsorNot(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
+        int minX1 = Math.min(x1, x2);
+        int maxX1 = Math.max(x1, x2);
+        int minY1 = Math.min(y1, y2);
+        int maxY1 = Math.max(y1, y2);
+        int minX2 = Math.min(x3, x4);
+        int maxX2 = Math.max(x3, x4);
+        int minY2 = Math.min(y3, y4);
+        int maxY2 = Math.max(y3, y4);
+        return minX1 == minX2 && maxX1 == maxX2 && minY1 == minY2 && maxY1 == maxY2;
+    }
     public static void main(String[] args) {
         System.out.println("Welcome to Line Comparison Computation Program");
 
@@ -46,11 +58,12 @@ public class LineCompProb {
         String line1 = String.valueOf(lineLength1);// to convert an integer to string same like to_string
         String line2 = String.valueOf(lineLength2);
 
-        // if (line1.equals(line2)) {// given in pdf thats why
-        //     System.out.println("Both lines are equal");
-        // } else {
-        //     System.out.println("Both lines are not equal");
-        // }
+         if (lineEqualsorNot(x1, y1, x2, y2, x3, y3, x4, y4)) {
+            System.out.println("Both lines are equal (using lineEqualsorNot method)");
+        } else {
+            System.out.println("Both lines are not equal (using lineEqualsorNot method)");
+        }
+         
         int compare=line1.compareTo(line2);
        
         if(compare==0){
